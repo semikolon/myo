@@ -26,10 +26,14 @@ Thalmic's patent US 9,600,030 describes **two elastic bands** ("adaptive coupler
 - The FCC lab (2014): the logo pod's outer plate off while the rubber around it stays whole.
 Visconti et al. 2018 reuse Adafruit's photos. So opening the cell pods **probably needs no cut**; how the outer plate is held (clips, adhesive or both) is unknown.
 
+**How the outer plate is held: confirmed 2026-11-03 by opening one.** Fredrik opened the right-hand wide pod beside the logo pod (the guess about which pods hold cells was right). The plate has **two clip hooks at each short end** and a **bead of adhesive along both long edges**; its inside face is clean. The earlier reading of Adafruit's photo, glue across the whole face, was wrong: the grey piece in that photo is something else. What worked: slicing the adhesive along the long sides with a scalpel, the short ends left alone, then lifting. The cell sits in the pod with its wire end toward the flex cable.
+
+**The original cell:** "EVE 571830 1430101511 260mAh 3.7V", not swollen. At its wire end sits the cell's own protection board under kapton (silkscreen C1, U1, U2, R1–R3, C2, "-B"); the three wires leave that board.
+
 ## The working plan (untested)
 1. Battery pod = one of the two wide pods beside the logo pod.
 2. The seam is very thin. Start it with a scalpel used only as a wedge, at most 1–2 mm deep, angled away from the cell underneath (a punctured LiPo cell can catch fire).
-3. Once a gap opens, work round the edge with thin plastic (a guitar pick, an old plastic card), never with the blade.
+3. Do not lever with the blade (it snaps, and a snapped tip flies). Warm the plate until it is warm to the touch, then slice along the seam to cut the glue, and lever only with plastic. A suction cup on the smooth plate, and a drop of isopropyl alcohol in the seam to soften the adhesive, are the usual phone-repair aids.
 4. If it will not give, it is glued: warm lightly with a hairdryer, no warmer than a cup of tea you can hold.
 5. Photograph every step; this will be the first documented Myo cell replacement.
 6. Close with a flexible glue (silicone-based or E6000-type), not superglue.
