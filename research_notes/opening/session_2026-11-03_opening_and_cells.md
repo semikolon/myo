@@ -30,7 +30,7 @@ Visconti et al. 2018 reuse Adafruit's photos. So opening the cell pods **probabl
 
 **The original cell:** "EVE 571830 1430101511 260mAh 3.7V", not swollen. At its wire end sits the cell's own protection board under kapton (silkscreen C1, U1, U2, R1–R3, C2, "-B"); the three wires leave that board.
 
-## The working plan (untested)
+## The plan before opening (superseded: what worked is in § How the outer plate is held)
 1. Battery pod = one of the two wide pods beside the logo pod.
 2. The seam is very thin. Start it with a scalpel used only as a wedge, at most 1–2 mm deep, angled away from the cell underneath (a punctured LiPo cell can catch fire).
 3. Do not lever with the blade (it snaps, and a snapped tip flies). Warm the plate until it is warm to the touch, then slice along the seam to cut the glue, and lever only with plastic. A suction cup on the smooth plate, and a drop of isopropyl alcohol in the seam to soften the adhesive, are the usual phone-repair aids.
@@ -55,6 +55,12 @@ The cells were ordered on 2026-10-28 on Gemini's advice, before the 2026-11-02 r
 > "men vafan detta kunde du ju gjort MYCKET tydligare innan jag ens beställde batterier arghhh"
 
 The order itself predates the research, but the point stands: **a step that destroys or permanently changes the user's thing belongs at the top of the answer, stated as a cost, not inside a sentence about something else.** The research then also showed that the cut was probably not needed at all, which was found only because he pressed for more ("Research this extensively online. Ultrathink").
+
+A second lesson, from the soldering: guidance given while his hands are busy names each part by what he can see, and says what the tape holds and where. After "tape the new wire to the pod's rim" he asked:
+
+> "What do you mean, leave it alone? What do you mean by the pod? And how can I solder it if it's taped? And what is the pod's rim?"
+
+"The pod" (the black plastic box the cell sat in) and "the rim" (its edge) had been used all session without ever being shown to him, and "tape it" did not say the tape goes 1 cm back from the joint. One step per message, in his words, worked; three numbered steps with an unglossed noun did not.
 
 Two questions of his drove the useful finds:
 - "Hur vet jag var jag ska klippa?!?!" (with Adafruit's photo) → reading the photo showed two separate rubber layers, and that the flex cable runs in the pleated band, not in the cut one.

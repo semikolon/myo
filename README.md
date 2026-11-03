@@ -2,28 +2,31 @@
 
 Two Thalmic Labs Myo armbands, to be driven from the Mac Mini over Bluetooth LE without the dongle. First goal: wake them, read battery and firmware. Later: arm motion as mouse, muscle signals as clicks. The starting prompt is `~/Desktop/ThalmicLabsMyo.md` (AI-written; its sample code is untested).
 
-## State (2026-11-02)
+## State (2026-11-03)
 
 - Both bands light up while charging, and go dark the instant they are unplugged, although they were fully charged a few days before. No Bluetooth scan has ever seen them.
 - Reading from Thalmic's own LED table: a band that is dark right after unplugging has flat or failed cells. Moving it wakes normal sleep, and unplugging ends deep sleep, so neither explains it.
-- Replacement cells ordered 2026-10-28 from Teknikdelar (2 x Cameron Sino CS-MYG100RC, 3.7 V 220 mAh, 99 kr each). **Each band holds two cells** (Adafruit teardown; Visconti et al. 2018), so these cover one band.
+- Replacement cells: 2 x Cameron Sino CS-MYG100RC (3.7 V 220 mAh) from Teknikdelar. **Each band holds two cells** (Adafruit teardown; Visconti et al. 2018), so these cover one band.
+- **Swap in progress on the first band:** the right-hand wide pod is open, the old cell is cut free, and the new cell's black wire is soldered on. White and red remain. Where it stands and how to restart the iron: `research_notes/opening/session_2026-11-03_opening_and_cells.md` § Where the swap stands.
 - Full research: `reports/Myo wake and Bluetooth connection.md`, notes in `research_notes/`.
 
 ## Before opening a band
 
-Adafruit's teardown (2016) cut through a rubber band to lay the ring flat; see below for why reaching the cells probably needs no cut.
+Adafruit's teardown (2016) cut through a rubber band to lay the ring flat; reaching the cells needs no cut (below).
 
 **Where the cells are (2026-11-03, best evidence so far):** in the two pods directly either side of the logo pod. Thalmic's FCC filing (2ACKV-TL9B, internal photos dated 2014-07-08, saved in `research_notes/opening/`) shows the main board with one cell on each side, each cell lying on the sensor board of the neighbouring pod, joined to the main board by a short flex cable. Each original cell is soldered to its pod board with three wires: black, yellow, red. The new cells' white wire takes the yellow one's place. Two more pointers agree: Thalmic's 2014 prototype history puts the batteries in the pods beside the processor pod, and a 17 mm-wide cell fits only the wide pods (the logo pod sits in the middle of the three wide ones). Caveat: the FCC unit is a pre-production test sample (PCB rev D4).
 
-**Opening may not need a cut.** The FCC lab's first photo shows the logo pod with its outer plate off while the rubber around it stays whole. Thalmic's patent US 9,600,030 describes two elastic bands running along the pods, one with the flex circuit moulded in. Adafruit cut one band only to lay the ring flat. How the outer plate is held (clips, adhesive or both) is not documented; Adafruit's opened shells show residue that looks like adhesive. Plan: warm the battery pod with a hairdryer and lift its outer plate with a plastic pry tool, before any cutting.
+**Opening needs no cut (confirmed 2026-11-03).** The right-hand wide pod beside the logo pod held a cell, as predicted. Its outer plate has two clip hooks at each short end and a bead of adhesive along both long edges; the inside face is clean. What worked: slice the adhesive along the two long sides with a scalpel, leave the short ends alone, then lift with a plastic tool. A plastic pry tool alone was too thick for the seam. The rubber bands stay whole.
 
 **How others opened the pods (searched 2026-11-03, English, Chinese, Japanese; forums, Reddit, Hackaday, Instructables, papers, video):** nobody has described it. Only two sources show opened pods, and neither says how: Adafruit's teardown (photos, plus a video whose narration covers only the electronics; subtitles saved in `research_notes/opening/`) and the FCC lab photos. Visconti et al. 2018 reuse Adafruit's photos and add one of an original cell labelled "EVE 571830 144440100156 260mAh 3.7V". The video adds two facts: each cell rides on a sensor board and has a three-pin connection (likely a temperature sensor), and the main board takes the flex cable in a flip-up connector. We will be the first to document a replacement, so photograph each step.
 
-How it is built (searched 2026-11-03): the pods are held by a pleated elastomer band with the flex circuit moulded into it (OHM, the industrial designers: "an elastomeric band with an embedded flex circuit wraps around and holds the electronic outer plates"; engineering.com quotes the CEO on the same). Never cut that band. Adafruit's photos show a separate outer rubber edge cut once and pulled off, and pod shells prised apart, some with adhesive residue. In the prototype the battery pods sat either side of the main pod (BetaKit 2014); unconfirmed for the production band. Nobody has published how to put one back together. The plan, untested: try prising one battery pod's outer plate off with a plastic tool before cutting anything; close with a flexible glue (silicone-based or E6000-type), not superglue, which cracks on rubber.
+How it is built (searched 2026-11-03): the pods are held by a pleated elastomer band with the flex circuit moulded into it (OHM, the industrial designers: "an elastomeric band with an embedded flex circuit wraps around and holds the electronic outer plates"; engineering.com quotes the CEO on the same). Never cut that band. Adafruit's photos show a separate outer rubber edge cut once and pulled off, and pod shells prised apart, some with adhesive residue. In the prototype the battery pods sat either side of the main pod (BetaKit 2014), and the production band matches (confirmed by opening one). Nobody has published how to put one back together. Plan, untested: clip the plate back on its hooks; if it needs more, a flexible glue (silicone-based or E6000-type), not superglue, which cracks on rubber.
 
 The replacement cells (CS-MYG100RC) each have three bare tinned wires: red (+), black (−), white (likely a temperature sensor). They are soldered in, not plugged.
 
-Plug it into the Mac's own USB port. If a drive named "Myo" mounts, the main board is alive and the cells are the fault. If nothing mounts, try another port or cable before cutting anything.
+**Soldering, as learned at the bench:** cut the old wires near the old cell (black, yellow, red), leaving stubs on the pod's flex. Strip each stub 1–2 mm and tin it; solder melted onto the insulation never bonds. Lay the new wire alongside the stub with about 2 mm overlap and tape the new wire down 1 cm back so it presses on the stub; solder cannot bridge a gap. Order: black, white onto yellow, red last. The kit iron (Luxorparts 30 W, lead-free solder) oxidised its tip black after many attempts and then would not melt solder; clean it back to metal while cold and tin it as it heats. Leaded solder would make this easier.
+
+Plug it into the Mac's own USB port. If a drive named "Myo" mounts, the main board is alive and the cells are the fault. If nothing mounts, try another port or cable before opening anything.
 
 ## Running the scan
 
@@ -47,7 +50,7 @@ Verified without a band: protocol bytes against OSA-MYO-Controller, gesture logi
 
 ## Next steps
 
-1. When the cells arrive: the "Myo" drive check above, then replace both cells in one band and run the scan.
+1. Finish the first band: white and red joints, kapton over each joint, then the second cell in the left-hand wide pod; charge, look for the pulsing blue logo, run the scan.
 2. If that band comes back: decide on two more cells for the second band.
 3. Then: battery drain test, library choice (OSA MYO Controller or pymyo, see the report).
 
