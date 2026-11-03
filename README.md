@@ -11,6 +11,18 @@ Two Thalmic Labs Myo armbands, to be driven from the Mac Mini over Bluetooth LE 
 
 ## Before opening a band
 
+Adafruit's teardown (2016) cut through a rubber band to lay the ring flat; see below for why reaching the cells probably needs no cut.
+
+**Where the cells are (2026-11-03, best evidence so far):** in the two pods directly either side of the logo pod. Thalmic's FCC filing (2ACKV-TL9B, internal photos dated 2014-07-08, saved in `research_notes/opening/`) shows the main board with one cell on each side, each cell lying on the sensor board of the neighbouring pod, joined to the main board by a short flex cable. Each original cell is soldered to its pod board with three wires: black, yellow, red. The new cells' white wire takes the yellow one's place. Two more pointers agree: Thalmic's 2014 prototype history puts the batteries in the pods beside the processor pod, and a 17 mm-wide cell fits only the wide pods (the logo pod sits in the middle of the three wide ones). Caveat: the FCC unit is a pre-production test sample (PCB rev D4).
+
+**Opening may not need a cut.** The FCC lab's first photo shows the logo pod with its outer plate off while the rubber around it stays whole. Thalmic's patent US 9,600,030 describes two elastic bands running along the pods, one with the flex circuit moulded in. Adafruit cut one band only to lay the ring flat. How the outer plate is held (clips, adhesive or both) is not documented; Adafruit's opened shells show residue that looks like adhesive. Plan: warm the battery pod with a hairdryer and lift its outer plate with a plastic pry tool, before any cutting.
+
+**How others opened the pods (searched 2026-11-03, English, Chinese, Japanese; forums, Reddit, Hackaday, Instructables, papers, video):** nobody has described it. Only two sources show opened pods, and neither says how: Adafruit's teardown (photos, plus a video whose narration covers only the electronics; subtitles saved in `research_notes/opening/`) and the FCC lab photos. Visconti et al. 2018 reuse Adafruit's photos and add one of an original cell labelled "EVE 571830 144440100156 260mAh 3.7V". The video adds two facts: each cell rides on a sensor board and has a three-pin connection (likely a temperature sensor), and the main board takes the flex cable in a flip-up connector. We will be the first to document a replacement, so photograph each step.
+
+How it is built (searched 2026-11-03): the pods are held by a pleated elastomer band with the flex circuit moulded into it (OHM, the industrial designers: "an elastomeric band with an embedded flex circuit wraps around and holds the electronic outer plates"; engineering.com quotes the CEO on the same). Never cut that band. Adafruit's photos show a separate outer rubber edge cut once and pulled off, and pod shells prised apart, some with adhesive residue. In the prototype the battery pods sat either side of the main pod (BetaKit 2014); unconfirmed for the production band. Nobody has published how to put one back together. The plan, untested: try prising one battery pod's outer plate off with a plastic tool before cutting anything; close with a flexible glue (silicone-based or E6000-type), not superglue, which cracks on rubber.
+
+The replacement cells (CS-MYG100RC) each have three bare tinned wires: red (+), black (−), white (likely a temperature sensor). They are soldered in, not plugged.
+
 Plug it into the Mac's own USB port. If a drive named "Myo" mounts, the main board is alive and the cells are the fault. If nothing mounts, try another port or cable before cutting anything.
 
 ## Running the scan

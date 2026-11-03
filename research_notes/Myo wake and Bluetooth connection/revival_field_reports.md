@@ -82,7 +82,7 @@ No Myo-specific field report of a long trickle-charge recovery was found. Thalmi
 ## Q4. Battery replacement: cell type, size, connector, teardown, difficulty
 
 ### Takeaway
-The Myo holds two LiPo cells in two separate pods. Academic teardowns list them as 3.7 V 260 mAh each; aftermarket replacements sold as Myo part 571830 / 144440100156 are 3.7 V 220 mAh, 32 x 17 x 6 mm. Opening requires cutting through the rubber gasket that joins the pods. No step-by-step replacement guide or hands-on replacement report was found (no iFixit guide surfaced).
+The Myo holds two LiPo cells in two separate pods. Academic teardowns list them as 3.7 V 260 mAh each; aftermarket replacements sold as Myo part 571830 / 144440100156 are 3.7 V 220 mAh, 32 x 17 x 6 mm. Opening requires cutting through the rubber gasket that joins the pods. ⚠ *(Probably not; see the 2026-11-03 note at the end of this section.)* No step-by-step replacement guide or hands-on replacement report was found (no iFixit guide surfaced).
 
 ### Cited Findings
 - Adafruit teardown: "Upon clipping through the rubber gasket to unfold the ring, the EMG electrode units were unveiled. Inside each cubby was a small circuit board, and there are two batteries tucked in different cubbies." Main board: Freescale Kinetis MK22FN1M0 Cortex-M4 120 MHz, Nordic nRF51822 BLE under a can, vibration motor; MPU-9150 IMU on the back. — [Adafruit: Myo Armband Teardown](https://learn.adafruit.com/myo-armband-teardown/inside-myo) (video: [YouTube E0GufWmT4mU](https://www.youtube.com/watch?v=E0GufWmT4mU))
@@ -93,7 +93,7 @@ The Myo holds two LiPo cells in two separate pods. Academic teardowns list them 
 
 ### Inferences
 - The two capacity figures (260 vs 220 mAh) conflict; the papers likely read a label, while the 220 mAh figure is a reseller's compatible part. The part code 571830 follows the usual LiPo naming (about 5.7 mm thick, 18 mm wide, 30 mm long), which roughly matches the 32 x 17 x 6 mm listing. Measure the original cells before buying.
-- Since a replacement would need two cells per band, and each cell sits behind an electrode in a separate pod, the job involves cutting the gasket, desoldering or unplugging two cells, and resealing; difficulty is moderate to high and the band will not be watertight or as neat afterwards. No source confirms whether the cells use connectors or are soldered.
+- Since a replacement would need two cells per band, and each cell sits behind an electrode in a separate pod, the job involves cutting the gasket, desoldering or unplugging two cells, and resealing; difficulty is moderate to high and the band will not be watertight or as neat afterwards. No source confirms whether the cells use connectors or are soldered. ⚠ *Superseded 2026-11-03: the FCC internal photos show the cells soldered with three wires, and an outer plate removed without cutting; see `research_notes/opening/session_2026-11-03_opening_and_cells.md`.*
 - If one cell has failed and the other has not, the two are presumably in parallel; replacing both together is the safe choice (inference).
 
 ### Gaps
