@@ -7,7 +7,7 @@ Two Thalmic Labs Myo armbands, to be driven from the Mac Mini over Bluetooth LE 
 - Both bands light up while charging, and go dark the instant they are unplugged, although they were fully charged a few days before. No Bluetooth scan has ever seen them.
 - Reading from Thalmic's own LED table: a band that is dark right after unplugging has flat or failed cells. Moving it wakes normal sleep, and unplugging ends deep sleep, so neither explains it.
 - Replacement cells: 2 x Cameron Sino CS-MYG100RC (3.7 V 220 mAh) from Teknikdelar. **Each band holds two cells** (Adafruit teardown; Visconti et al. 2018), so these cover one band.
-- **Swap in progress on the first band:** the right-hand wide pod is open, the old cell is cut free, and the new cell's black wire is soldered on. White and red remain. Where it stands and how to restart the iron: `research_notes/opening/session_2026-11-03_opening_and_cells.md` § Where the swap stands.
+- **Swap in progress on the first band:** the right-hand wide pod is open, the old cell is cut free, and the black stub is tinned. No joint is soldered yet. Where it stands and how to restart the iron: `research_notes/opening/session_2026-11-03_opening_and_cells.md` § Where the swap stands.
 - Full research: `reports/Myo wake and Bluetooth connection.md`, notes in `research_notes/`.
 
 ## Before opening a band
@@ -50,7 +50,7 @@ Verified without a band: protocol bytes against OSA-MYO-Controller, gesture logi
 
 ## Next steps
 
-1. Finish the first band: white and red joints, kapton over each joint, then the second cell in the left-hand wide pod; charge, look for the pulsing blue logo, run the scan.
+1. Finish the first band: black, white and red joints, kapton over each joint, then the second cell in the left-hand wide pod; charge, look for the pulsing blue logo, run the scan.
 2. If that band comes back: decide on two more cells for the second band.
 3. Then: battery drain test, library choice (OSA MYO Controller or pymyo, see the report).
 

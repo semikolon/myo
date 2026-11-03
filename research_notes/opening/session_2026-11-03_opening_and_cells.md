@@ -1,7 +1,7 @@
 # Session 2026-11-03: opening a Myo and replacing its cells
 
 **Type:** research and hands-on guidance, before the first cell swap.
-**State at the end:** the right-hand wide pod is open, the old cell's wires are cut, and the new cell's black wire is soldered to the black stub (tug test not yet done). White → yellow and red → red remain; see § Where the swap stands.
+**State at the end:** the right-hand wide pod is open, the old cell's wires are cut, and the black stub is stripped and tinned; no joint is soldered yet. Black, white → yellow and red → red remain; see § Where the swap stands.
 
 ## What was found
 
@@ -40,8 +40,8 @@ Visconti et al. 2018 reuse Adafruit's photos. So opening the cell pods **probabl
 
 ## Where the swap stands (2026-11-03, night)
 
-- Done: pod opened; old wires cut near the old cell (black, yellow, red); black stub stripped about 2 mm and tinned; new black wire soldered to it, lying side by side with about 2 mm overlap.
-- Left: give the black joint a light tug; white → yellow stub; red → red stub last (new red stays taped until then); insulate each joint with narrow kapton strips; test (USB charge, then unplugged the logo should pulse blue; the bridge's `bridge.log`); clip the lid back.
+- Done: pod opened; old wires cut near the old cell (black, yellow, red); black stub stripped about 2 mm and tinned; new black wire laid alongside it with about 2 mm overlap.
+- Left: solder the black joint (not yet done; the tip oxidised before it took); white → yellow stub; red → red stub last (new red stays taped until then); insulate each joint with narrow kapton strips; test (USB charge, then unplugged the logo should pulse blue; the bridge's `bridge.log`); clip the lid back.
 - What went wrong at the bench, worth knowing for the next person:
   - A solder blob melted onto a stub's insulation never wets the copper and drops off. Strip 1–2 mm first.
   - Solder cannot bridge a gap. Lay the wires side by side and tape the long new wire about 1 cm back so its tip presses on the stub; never try to move the short stub.
