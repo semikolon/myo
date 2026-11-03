@@ -1,3 +1,5 @@
 .venv/
 __pycache__/
 .pytest_cache/
+# Copyrighted paper, kept locally only: https://doi.org/10.21307/ijssis-2018-005
+research_notes/opening/visconti_2018_myo_overview.pdf
