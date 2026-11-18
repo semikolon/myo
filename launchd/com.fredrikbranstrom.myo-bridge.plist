@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Keeps myo-bridge running: it scans for the Myo, connects when one wakes, and
+     reconnects after it sleeps. Installed by scripts/install_agent.sh.
+     Stop it: launchctl bootout gui/$(id -u)/com.fredrikbranstrom.myo-bridge -->
+<plist version="1.0">
+<dict>
+    <key>Label</key><string>com.fredrikbranstrom.myo-bridge</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/fredrikbranstrom/Applications/MyoBridge.app/Contents/MacOS/MyoBridge</string>
+    </array>
+    <key>RunAtLoad</key><true/>
+    <key>KeepAlive</key><true/>
+    <key>ThrottleInterval</key><integer>30</integer>
+    <key>ProcessType</key><string>Background</string>
+    <key>StandardErrorPath</key><string>/Users/fredrikbranstrom/.local/state/myo-bridge/launchd.err</string>
+</dict>
+</plist>

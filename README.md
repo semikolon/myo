@@ -62,3 +62,14 @@ Most value for the least work, even with one band: a silent two-way link with th
 - **Buzz out.** The vibration motor as a quiet signal: a Claude session waiting for him, an urgent notification while on a call or at night.
 - **Ranked lower.** Arm-as-mouse (the starting prompt's idea): arm fatigue and IMU drift. Workout rep and muscle tracking: fun, EMG is coarse (8-bit, 200 Hz), likely little daily use.
 - **To run in the background** the bridge needs its own app bundle declaring Bluetooth use; macOS kills a Bluetooth process started from a shell that lacks it.
+
+## Starting the bridge at login (parked 2026-11-18)
+
+The Mac used to start `MyoBridge.app` at every login through a LaunchAgent. It was switched off on 2026-11-18, since the
+armbands do not wake yet (see State above) and the bridge sat idle (0.01 s of CPU in 15 days). The agent's plist is kept
+in `launchd/com.fredrikbranstrom.myo-bridge.plist`. To start the bridge at login again once a band works:
+
+```bash
+cp launchd/com.fredrikbranstrom.myo-bridge.plist ~/Library/LaunchAgents/
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.fredrikbranstrom.myo-bridge.plist
+```
