@@ -135,7 +135,7 @@ Här är status och specifikationer för mitt Myo-projekt som du behöver veta i
 ### Hårdvarustatus & Strömförsörjning
 1. Utrustning: Jag har två stycken Thalmic Labs Myo Gesture Control Armbands.
 2. Batteristatus: Armbanden har legat urladdade länge men har framgångsrikt vaknat till liv och tagit laddning via en stabil, lågvoltig Samsung-reseladdare (Modell ETA0U83EWE, Output: 5.0V ⎓ 1.0A). Status-LED lyser.
-3. Batteribyte beställt: 2 st nya ersättningsbatterier är köpta från Teknikdelar.se (Ordernummer: 11083320, Betalsätt: Swish, Totalt: 247 kr). 
+3. Batteribyte beställt: 2 st nya ersättningsbatterier är köpta från Teknikdelar.se. 
    - Batterispecifikationer: Tillverkare Cameron Sino (Modell: CS-MYG100RC / Delnummer: 571830 / 144440100156). 3.7V Li-Polymer, 220mAh. Integrerad PCM-skyddskrets.
    - Montering: Jag har lödkit och vet hur man öppnar enheten och löder på kretskortet.
 
